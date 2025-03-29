@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    background-image: url("./images/22.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 20px 3px rgba(0, 0, 0, 1);
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    /* background: #2a2a2a3d ; */
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
+    width: 899px;
+}
+
+.community-cards {
+    margin-bottom: 1.2rem;
+    min-height: 243px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-hand {
+    min-height: 243px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.computer-hand {
+    margin-bottom: 1.2rem;
+    min-height: 243px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+.computer-hand .pokerCard.closed{
+    background-image: url("./images/B.svg") !important;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+#play-button, #restart-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#play-button {
+    background-color: #4CAF50;
+}
+#play-button:disabled {
+    background-color: #4CAF50;
+    opacity: 0.5;
+}
+#play-button:hover {
+    background-color: #45a049;
+}
+
+#restart-button {
+    background-color: #f44336;
+}
+#restart-button:disabled {
+    background-color: #f44336;
+    opacity: 0.5;
+}
+#restart-button:hover:not(:disabled) {
+    background-color: #da190b;
+}
+
+.pokerCard {
+    transition: transform 0.3s;
+    width: 154px;
+    height: 236px;
+    border-radius: 14px;
+    background-size: cover;
+    display: inline-block;
+    margin: 0 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.pokerCard:hover {
+    transform: translateY(-10px);
+}
+
+.pokerCard.highlighted {
+    transform: translateY(-20px);
+    box-shadow: 0 0 4px 6px rgba(255, 215, 0, 0.5);
+    border: 2px solid gold;
+}
+
+.betting-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 0.5rem;
+    flex: 1;
+}
+
+.bet-amount {
+    color: white;
+    font-size: 1.2rem;
+    min-width: 100px;
+    text-align: center;
+}
+
+#decrease-bet, #increase-bet {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+#decrease-bet:hover, #increase-bet:hover {
+    background-color: #45a049;
+}
+
+#decrease-bet {
+    background-color: #f44336;
+}
+
+#decrease-bet:hover {
+    background-color: #da190b;
+}
+
+.score-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+#score-value {
+    color: #4CAF50;
+}
+
+.bottom-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .game-container {
+        width: 100%;
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    .pokerCard {
+        width: 100px;
+        height: 150px;
+        margin: 0 5px;
+    }
+
+    .community-cards, .player-hand, .computer-hand {
+        min-height: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .bottom-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .controls, .betting-counter, .score-display {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    #play-button, #restart-button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .bet-amount, .score-display {
+        font-size: 1rem;
+    }
+
+    #decrease-bet, #increase-bet {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pokerCard {
+        width: 80px;
+        height: 120px;
+        margin: 0 3px;
+    }
+
+    .community-cards, .player-hand, .computer-hand {
+        min-height: 120px;
+    }
+
+    #play-button, #restart-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .bet-amount, .score-display {
+        font-size: 0.9rem;
+    }
+}

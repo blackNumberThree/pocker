@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+    <title>Texas Hold'em Poker</title>
+    <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Noto Sans", sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+
+    <div class="game-container">
+
+      <div class="computer-hand">
+        <!-- Computer's cards will be displayed here -->
+      </div>
+      <div class="community-cards">
+        <!-- Community cards will be displayed here -->
+      </div>
+      <div class="player-hand">
+        <!-- Player's cards will be displayed here -->
+      </div>
+      <div class="bottom-controls">
+        <div class="controls">
+          <button id="play-button">Start Game</button>
+          <button id="restart-button" disabled>Finish and Result </button>
+        </div>
+        <div class="betting-counter">
+          <button id="decrease-bet">-</button>
+          <div class="bet-amount">
+            <span>Bet: $</span>
+            <span id="bet-value">0</span>
+          </div>
+          <button id="increase-bet">+</button>
+        </div>
+        <div class="score-display">
+          <span>Score: $</span>
+          <span id="score-value">0</span>
+        </div>
+        <div class="score-display">
+          <span>Cards left:</span>
+          <span id="cards-left">52</span>
+        </div>
+      </div>
+    </div>
+    <script src="evaluate.js"></script>
+    <script src="freshDeck.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
