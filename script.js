@@ -212,7 +212,7 @@ class Game {
         const computerScore=this.countComputerCards();
         const playerScore=this.countPlayerCards();
 
-        if (playerScore.sum>computerScore.sum+100) {
+        if (playerScore.sum>computerScore.sum+10) {
             this.score +=  this.currentBet*2;
             setTimeout(() => {  
             alert(`Player: ${playerScore.type} ${playerScore.sum}\nComputer: ${computerScore.type} ${computerScore.sum} \n Player wins`);
@@ -221,7 +221,7 @@ class Game {
         }else{
             this.score -= this.currentBet;
             setTimeout(() => {
-                alert(`Player: ${playerScore.type} ${playerScore.sum}\nComputer: ${computerScore.type} ${computerScore.sum+100} \n Computer wins`);
+                alert(`Player: ${playerScore.type} ${playerScore.sum}\nComputer: ${computerScore.type} ${computerScore.sum+10} \n Computer wins`);
                 game.restart();
 
             }, 300);
